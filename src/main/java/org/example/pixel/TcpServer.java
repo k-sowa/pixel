@@ -26,11 +26,14 @@ public class TcpServer {
     private static final String DB_NAME = "jdbc:sqlite:database.db";
     private Connection database; // Dodanie połączenia do bazy danych
     private final UserController userController;
+
+    //Podłączenie bazy danych
     @Autowired
     public TcpServer(UserController userController) {
         this.userController = userController;
     }
 
+    //adnotacja @PostConstruct powoduje, że jest wykonywana natychmiast po utworzeniu instancji klasy.
     @PostConstruct
     public void startServer() {
         try {
@@ -106,7 +109,7 @@ public class TcpServer {
         return removedRecord;
     }
 
-    //Znalezienie użytkownika
+    //Znalezienie użytkownika na podstawie UUID
 
     private User findUser(UUID uuid) {
         return userController.users.stream()
