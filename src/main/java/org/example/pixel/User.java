@@ -1,10 +1,6 @@
 package org.example.pixel;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.text.SimpleDateFormat;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -28,6 +24,7 @@ public class User {
     public void refreshToken() {
         tokenCreationTime = LocalDateTime.now();
     }
+
 
     public LocalDateTime getTokenCreationTime() {
         return tokenCreationTime;
